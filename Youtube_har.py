@@ -12,7 +12,7 @@ st.set_page_config(page_title="Youtube Data Harvesting and Warehousing", page_ic
 
 st.title(":green[YouTube Data] :red[Harvesting] and :blue[Warehousing]")
 
-API_KEY='AIzaSyDdtIy_08xc2ThbKtdOEQIOI11tdZ3oB04'
+API_KEY='Your API KEy'
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 
 st.subheader(":red[Fetching Data and Uploading to MongoDB Database]")
@@ -236,12 +236,12 @@ if submit1:
             host = "localhost",
             port=3306,
             user = "root",
-            password = "Magnator#211292",
+            password = "Your password",
             database = "youtube_data_warehousing")
 
         cursor = connection.cursor()
 
-        engine = create_engine('mysql+mysqlconnector://root:Magnator#211292@localhost/youtube_data_warehousing')
+        engine = create_engine('mysql+mysqlconnector://root:Yourpassword@localhost/youtube_data_warehousing')
 
         try:
             channel_data.to_sql('channel_data', con=engine, if_exists='append', index=False, method='multi')
